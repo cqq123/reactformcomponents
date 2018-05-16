@@ -1,0 +1,77 @@
+.main {
+  position: relative;
+}
+.select {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  line-height: 36px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select:hover {
+  border: 1px solid #00d2d9;
+  background: #aaa;
+  transition: border-color 300ms, background-color 300ms;
+  .closeIcon {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .selectValue {
+    color: #fff;
+  }
+  .selectIcon {
+    border-top-color: #fff;
+  }
+}
+.selectValue {
+  font-size: 12px;
+  color: #aaa;
+}
+.icons {
+  display: flex;
+  align-items: center;
+}
+.selectIcon {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #aaa;
+}
+.rotateIcon {
+  transform: rotate(180deg);
+  transition: transform 300ms;
+}
+.rotateIconReserve {
+  transform: rotate(0);
+  transition: transform 300ms;
+}
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  background: url(./close.png) center center no-repeat;
+  background-size: contain;
+  opacity: 0;
+}
+.options {
+  position: absolute;
+  top: 40px;
+  border: 1px solid #aaa;
+  width: 100%;
+  border-radius: 4px;
+  animation: slideDown 300ms;
+}
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 400px;
+    opacity: 1;
+  }
+}

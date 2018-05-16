@@ -1,0 +1,16 @@
+.select {
+  width: 200px;
+}
+.option {
+  color: #aaa;
+}
+.option:hover {
+  background: #a4e8eb;
+  color: #fff;
+  transition: background-color 300ms color 300ms;
+}
+
+.selectOption {
+  background: #6fb6b9;
+  color: #fff;
+}
