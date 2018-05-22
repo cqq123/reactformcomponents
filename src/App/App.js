@@ -5,6 +5,8 @@ import InputTest from 'demo/InputTest';
 import CheckboxTest from 'demo/CheckboxTest';
 import RadioTest from 'demo/RadioTest';
 import SelectTest from 'demo/SelectTest';
+import DrawImg from 'components/DrawImg';
+import UploadFile from 'components/UploadFile';
 /* eslint-enable */
 const App = () => (
   <div className={style.main}>
@@ -12,6 +14,8 @@ const App = () => (
     <CheckboxTest />
     <RadioTest />
     <SelectTest />
+    <DrawImg />
+    <UploadFile />
   </div>
 );
 

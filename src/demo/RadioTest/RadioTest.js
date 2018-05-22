@@ -15,10 +15,8 @@ class RadioTest extends Component {
       ],
       projectType: '1',
     };
-    this.changeProjectType = this.changeProjectType.bind(this);
   }
-  changeProjectType(value) {
-    console.log(value);
+  changeProjectType = (value) => {
     this.setState({
       projectType: value,
     });
