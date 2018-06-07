@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 /* eslint-disable */
 import { Select, Option } from 'components/Select';
 /* eslint-enable */
@@ -8,43 +9,68 @@ import style from './SelectTest.scss';
 class SelectTest extends Component {
   constructor(props) {
     super(props);
+    this.handleChangeValue = this.handleChangeValue.bind(this);
     this.state = {
-      selectValue: '',
-      selectList: [
-        { label: '海曙区', id: '33001' },
-        { label: '鄞州区', id: '33002' },
-        { label: '江北区', id: '33003' },
-      ],
+      isLoading: false,
     };
-    this.changeValue = this.changeValue.bind(this);
   }
-  changeValue(value) {
+  handleChangeValue(value) {
+    const { changeSelectValue, changeList } = this.props;
     this.setState({
-      selectValue: value,
+      isLoading: true,
+    });
+    changeSelectValue(value);
+    changeList().then(() => {
+      this.setState({
+        isLoading: false,
+      });
     });
   }
   render() {
-    const { selectValue, selectList } = this.state;
+    const { selectValue, selectList, childrenList } = this.props;
+    const { isLoading } = this.state;
     return (
-      <Select
-        className={style.select}
-        value={selectValue}
-        changeValue={this.changeValue}
-      >
-        {
-          selectList.map(item => (
-            <Option
-              key={item.id}
-              className={cn(style.option, {
-                [style.selectOption]: selectValue === item.label,
-              })}
-              value={item.label}
-            />
-          ))
-        }
-      </Select>
+      <div>
+        <Select
+          className={style.select}
+          value={selectValue}
+          changeValue={this.handleChangeValue}
+        >
+          {
+            selectList.map(item => (
+              <Option
+                key={item.id}
+                className={cn(style.option, {
+                  [style.selectOption]: selectValue === item.label,
+                })}
+                value={item.label}
+              />
+            ))
+          }
+        </Select>
+        <div>
+          {
+            isLoading && (
+              <span>正在加载，请稍后……</span>
+            )
+          }
+          { !isLoading && !_.isEmpty(childrenList) &&
+            childrenList.map((a, idx) => (
+              <div key={idx}>{a.data.title}</div>
+            ))
+          }
+        </div>
+      </div>
     );
   }
 }
+SelectTest.propTypes = {
+  selectValue: PropTypes.string.isRequired,
+  selectList: PropTypes.array.isRequired,
+  childrenList: PropTypes.array.isRequired,
+  changeSelectValue: PropTypes.func.isRequired,
+  changeList: PropTypes.func.isRequired,
+};
 
 export default SelectTest;
+// eslint-disabled

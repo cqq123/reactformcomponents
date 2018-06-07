@@ -1,0 +1,50 @@
+.main {
+  position: relative;
+}
+.slideView {
+  overflow: hidden;
+  border: 1px solid #000;
+  position: relative;
+  visibility: visible;
+}
+.container {
+  clear: both;
+  position: relative;
+}
+.imgDiv {
+  float: left;
+  position: relative;
+}
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%;
+  height: 30%;
+  background-color: rgba(1, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 200ms;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 200ms;
+  }
+}
+.buttonNext {
+  left: 10px;
+  background-image: url(./left.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+.buttonPrev {
+  right: 10px;
+  background-image: url(./right.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}

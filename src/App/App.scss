@@ -5,3 +5,67 @@
   background: #00d2d9;
   color: #fff;
 }
+.bar {
+  rect {
+    fill: #00d2d9;
+    transition: fill 500ms;
+    &:hover {
+      fill: #9df3d6;
+      transition: fill 500ms;
+    }
+  }
+  text {
+    text-anchor: middle;
+    fill: #aaa;
+  }
+}
+.label {
+  text {
+    fill: #aaa;
+    text-anchor: middle;
+  }
+}
+.group {
+  text {
+    text-anchor: middle;
+  }
+}
+.toolTips {
+  rect {
+    fill: rgba(0, 0, 0, 0);
+    transition: fill 500ms;
+    &:hover {
+      fill: rgba(0, 0, 0, 0.3);
+      transition: fill 500ms;
+
+    }
+  }
+}
+.line {
+  fill: none;
+  stroke: #ffab00;
+  stroke-width: 3px;
+}
+.line2 {
+  fill: none;
+  stroke: red;
+  stroke-width: 2;
+}
+.area {
+  fill: #ffab00;
+  opacity: 0.4;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.axisBottom, .axisLeft {
+  path {
+    stroke: #7ff319;
+  }
+  line {
+    stroke: #aaa;
+  }
+  text {
+    fill: #aaa;
+  }
+}

@@ -1,0 +1,13 @@
+.main {
+  position: relative;
+}
+.text {
+  text-anchor: middle;
+}
+.rect {
+  transition: y 500ms, height 500ms;
+}
+
+.toolTips {
+  position: absolute;
+}

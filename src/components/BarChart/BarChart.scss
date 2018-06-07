@@ -1,0 +1,26 @@
+.rect {
+  fill: aqua;
+  &:hover {
+    fill: aquamarine;
+  }
+}
+.main {
+  border: 1px solid #000;
+}
+.text {
+  fill: #aaa;
+  text-anchor: middle;
+}
+.rectGroup {
+  overflow: hidden;
+}
+.textGroup {
+  text {
+    fill: #aaa;
+  }
+}
+.line {
+  fill: none;
+  stroke: #ffab00;
+  stroke-width: 3;
+}

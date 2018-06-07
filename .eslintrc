@@ -24,7 +24,9 @@
       "jsx-a11y/no-noninteractive-element-interactions": 0,
       "jsx-a11y/label-has-for": 0,
       "import/no-extraneous-dependencies": 0,
-      "max-len": ["error", { "code": 150 }]
+      "max-len": ["error", { "code": 150 }],
+      "func-names": 0
+      
     },
     "plugins": [
       "react"
